@@ -1,8 +1,14 @@
 var express = require('express')
 var router = express.Router()
 
+//Mock data
+const bags = [
+  { name: 'Pedro', bags: 5 },
+  { name: 'Maria', bags: 5 }
+]
+
 router.get('/', (req, res) => {
-  res.send('Get Bags')
+  res.json(bags)
 })
 
 router.get('/:id', (req, res) => {
