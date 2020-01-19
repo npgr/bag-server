@@ -2,6 +2,7 @@ require('dotenv').config()
 const cors = require('cors')
 const bodyParser = require('body-parser')
 const express = require('express')
+const routes = require('./routes')
 
 const app = express()
 
@@ -15,6 +16,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 // Routes
 
 app.get('/', (req, res) => res.send('Hello World'))
+app.use('/bag', routes.bag)
 
 // Start
 
